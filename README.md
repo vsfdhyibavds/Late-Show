@@ -1,54 +1,42 @@
-# LateShow API
+# LateShow
 
-This is a Flask API for the LateShow project. It manages Episodes, Guests, and Appearances with relationships and validations.
+## Description
+LateShow is a Python-based application that manages data related to episodes, guests, and appearances. It uses a database with migrations and CSV data files for seeding or data import.
 
-## Setup
+## Installation
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
+2. Create and activate a virtual environment:
+   ```
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-1. Create a virtual environment and activate it:
+## Usage
+1. Run database migrations:
+   ```
+   flask db upgrade
+   ```
+2. Seed the database with initial data:
+   ```
+   python seed.py
+   ```
+3. Run the application:
+   ```
+   python app.py
+   ```
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+## Database
+The project uses a database with migrations managed by Alembic. CSV files in the project are used for seeding data related to episodes, guests, and appearances.
 
-2. Install dependencies:
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-```bash
-pip install -r requirements.txt
-```
-
-3. Run database migrations:
-
-```bash
-flask db init
-flask db migrate
-flask db upgrade
-```
-
-4. Seed the database:
-
-Make sure you have the CSV files (`episodes.csv`, `guests.csv`, `appearances.csv`) in the project root.
-
-```bash
-python seed.py
-```
-
-5. Run the app:
-
-```bash
-python app.py
-```
-
-## API Endpoints
-
-- `GET /episodes` - List all episodes
-- `GET /episodes/:id` - Get episode details with appearances and guests
-- `GET /guests` - List all guests
-- `POST /appearances` - Create a new appearance
-
-## Testing
-
-Import the provided Postman collection `challenge-4-lateshow.postman_collection.json` into Postman to test the API endpoints.
-
-## Notes
-
+## License
+This project is licensed under the MIT License.
